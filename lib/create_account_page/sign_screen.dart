@@ -17,6 +17,12 @@ class _SignUpPageState extends State<SignUpPage> {
   final passwordController = TextEditingController();
   final usernameController = TextEditingController();
   AuthController authController = AuthController();
+  clearText() {
+    emailController.clear();
+    passwordController.clear();
+    usernameController.clear();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,6 +64,12 @@ class _SignUpPageState extends State<SignUpPage> {
               const SizedBox(height: 15),
               GestureDetector(
                 onTap: () async {
+                  clearText() {
+                    emailController.clear();
+                    passwordController.clear();
+                    usernameController.clear();
+                  }
+
                   SharedPreferences sharedPreferences =
                       await SharedPreferences.getInstance();
                   sharedPreferences.setString('email', emailController.text);

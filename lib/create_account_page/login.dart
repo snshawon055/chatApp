@@ -15,6 +15,11 @@ class _LoginPageState extends State<LoginPage> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   AuthController authController = AuthController();
+  clearText() {
+    emailController.clear();
+    passwordController.clear();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,6 +51,11 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(height: 15),
               GestureDetector(
                 onTap: () async {
+                  clearText() {
+                    emailController.clear();
+                    passwordController.clear();
+                  }
+
                   SharedPreferences sharedPreferences =
                       await SharedPreferences.getInstance();
                   sharedPreferences.setString('email', emailController.text);

@@ -92,7 +92,9 @@ class _ChateScreenState extends State<ChateScreen> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           const SizedBox(height: 10),
-          Expanded(child: ShowMessage()),
+          Expanded(
+            child: ShowMessage(),
+          ),
           Row(
             children: [
               Expanded(
